@@ -26,8 +26,8 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Configuration
-TOKEN = "8007522562:AAHZTWmQxGwFDqdPlfiagriMJuv833Ozdzc"
-VT_API_KEY = "e3d8a87a42c4115f47569e4c0b05755873148a49fc68466d7440def132b33ab2"  # Get from https://www.virustotal.com/
+TOKEN = "YOUR_TELEGRAM_BOT_API"
+VT_API_KEY = "YOUR_API_KEY_FROM_VIRUSTOTAL"  # Get from https://www.virustotal.com/
 
 # Track ongoing scans
 ongoing_scans = {}
