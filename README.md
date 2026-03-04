@@ -1,95 +1,102 @@
- URL Security Scanner Bot
-A powerful Telegram bot that scans URLs for malware and security threats using the VirusTotal API. Get instant security analysis for any URL directly in your Telegram chat.
+🚀 Odoo Error Bot
+A powerful Telegram bot for managing and searching Odoo error solutions with OCR support. Built with Python, this bot helps Odoo developers and users quickly find solutions to common errors and contribute their own fixes to the community database.
 
 ✨ Features
-🛡️ URL Scanning
-Instant Analysis: Scan any URL for malware, phishing, and security threats
+📝 Error Management
+Add Solutions: Post new error solutions with detailed descriptions
 
-Multi-Engine Scanning: Uses 70+ antivirus engines and URL scanners
+Text Mode: Manually type error messages, descriptions, and solutions
 
-Detailed Reports: Get comprehensive results with vendor breakdowns
+Image Mode: Upload screenshots - OCR automatically extracts error text
 
-Historical Data: Checks if URLs have been scanned before
+Search Database: Find solutions using keywords or natural language
 
-🤖 Bot Commands
+Recent Solutions: View the latest 5 solutions added to the database
+
+🖼️ OCR Capabilities
+Automatic Text Extraction: Extracts text from error screenshots
+
+Multiple OCR Configurations: Tries different recognition modes for accuracy
+
+Image Enhancement: Auto-resizes and enhances images for better text detection
+
+Smart Search: Uses OCR text to automatically search for matching solutions
+
+👥 User Features
+Persistent Storage: Remembers users even after clearing chat history
+
+User Statistics: Tracks contributions and activity
+
+Personal History: View your own posted solutions
+
+Quick Actions: Inline keyboards for faster navigation
+
+📊 Database
+SQLite Storage: Lightweight, portable database
+
+Structured Data: Stores error messages, descriptions, and solutions
+
+Timestamp Tracking: Records when solutions are added
+
+Full-Text Search: Case-insensitive search across all fields
+
+🛠️ Commands
 Command	Description	Example
-/start	Welcome message and bot introduction	/start
-/help	Show all available commands and usage	/help
-/scan <url>	Scan a specific URL	/scan https://example.com
-/privacy	View privacy policy	/privacy
-/stats	Get bot usage statistics	/stats
-📊 Scan Results
-The bot provides comprehensive scan results including:
-
-✅ Security vendors count - Total engines that scanned the URL
-
-🔴 Malicious detections - Number of engines flagging as malicious
-
-🟠 Suspicious detections - Number of suspicious flags
-
-🟢 Harmless verdicts - Engines finding no threats
-
-⚪ Undetected - Engines that didn't detect anything
-
-🔗 Detailed Report - Direct link to full VirusTotal analysis
-
-🎯 Key Features
-Auto-Detection: Automatically detects URLs in any message
-
-Smart Processing: Checks for existing reports before rescanning
-
-Command Menu: Full Telegram bot command interface
-
-Error Handling: Graceful error management with user notifications
-
-Privacy Focused: No storage of personal data or scan history
-
-🛠️ Installation
+/start	Welcome message and bot status	/start
+/post	Add a new error solution	/post
+/search <keyword>	Search for solutions	/search database error
+/recent	Show latest 5 solutions	/recent
+/myposts	View your contributions	/myposts
+/stats	Bot statistics	/stats
+/help	Show help guide	/help
+/cancel	Cancel current operation	/cancel
+📦 Installation
 Prerequisites
 Python 3.8 or higher
 
-Telegram Bot Token (from @BotFather)
+Tesseract OCR (for image processing)
 
-VirusTotal API Key (free tier available)
+Telegram Bot Token (from @BotFather)
 
 Step 1: Clone the Repository
 bash
-git clone https://github.com/yourusername/url-security-bot.git
-cd url-security-bot
-Step 2: Install Dependencies
+git clone https://github.com/yourusername/odoo-error-bot.git
+cd odoo-error-bot
+Step 2: Install Tesseract OCR
+Windows:
+
+Download from: GitHub UB-Mannheim/tesseract
+
+Install to: C:\Program Files\Tesseract-OCR\
+
+Add to PATH or update path in code
+
+Linux (Ubuntu/Debian):
+
+bash
+sudo apt update
+sudo apt install tesseract-ocr
+Linux (CentOS/RHEL):
+
+bash
+sudo yum install epel-release
+sudo yum install tesseract
+macOS:
+
+bash
+brew install tesseract
+Step 3: Install Python Dependencies
 bash
 pip install -r requirements.txt
 Or install manually:
 
 bash
-pip install python-telegram-bot requests
-Step 3: Get API Keys
-Telegram Bot Token:
-
-Open Telegram and search for @BotFather
-
-Send /newbot and follow instructions
-
-Copy the bot token
-
-VirusTotal API Key:
-
-Sign up at VirusTotal
-
-Go to your profile and get your API key
-
-Free tier allows up to 4 requests per minute
-
+pip install python-telegram-bot Pillow pytesseract
 Step 4: Configure the Bot
-Edit bot.py and update the configuration:
+Edit bot.py and update the bot token:
 
 python
-TOKEN = "YOUR_TELEGRAM_BOT_TOKEN_HERE"
-VT_API_KEY = "YOUR_VIRUSTOTAL_API_KEY_HERE"
+BOT_TOKEN = 'YOUR_BOT_TOKEN_HERE'  # Get from @BotFather
 Step 5: Run the Bot
 bash
 python bot.py
-📁 Project Structure
-text
-url-security-bot/
-├── bot.py            
