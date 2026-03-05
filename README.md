@@ -60,7 +60,7 @@ Telegram Bot Token (from @BotFather)
 
 Step 1: Clone the Repository
 bash
-git clone https://github.com/yourusername/odoo-error-bot.git
+git clone https://github.com/BirukAkliluWondi/URL-Scanner-telegram-bot.git
 cd odoo-error-bot
 Step 2: Install Tesseract OCR
 Windows:
